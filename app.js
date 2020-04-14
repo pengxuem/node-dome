@@ -21,12 +21,14 @@ app.engine('html', require('express-art-template'))
 
 
 app.get('', function(req, res){
-    res.send('hello!')
+    res.render('index.html', {
+        data: 'hello!'
+    })
 })
 
 
-app.listen(3000, function(){
-    console.log('express 3000 app is running...')
+app.listen(8888, function(){
+    console.log('express 8888 app is running...')
 })
 
 
