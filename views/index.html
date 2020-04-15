@@ -1,8 +1,83 @@
-{{ extend './home/layout.html' }}
+{{ extend './_layouts/home.html' }}
+
+{{block 'title'}}{{'多人博客 - 首页'}}{{/block}}
 
 
-{{ block }}
-    <div>
-        <h1>我是index页面，{{ data }}</h1>
-    </div>
+{{ block 'body' }}
+<section class="container">
+    <ul class="media-list">
+        <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img width="40" height="40" src="" alt="...">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><a href="/eopic/123">medaia pxm</a></h4>
+                <p> suey 回复问题 。 2人关注...</p>
+            </div>
+        </li>
+    </ul>
+    <ul class="media-list">
+        <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img width="40" height="40" src="" alt="...">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><a href="/eopic/123">medaia pxm</a></h4>
+                <p> suey 回复问题 。 2人关注...</p>
+            </div>
+        </li>
+    </ul>
+    <ul class="media-list">
+        <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img width="40" height="40" src="" alt="...">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><a href="/eopic/123">medaia pxm</a></h4>
+                <p> suey 回复问题 。 2人关注...</p>
+            </div>
+        </li>
+    </ul>
+    <ul class="media-list">
+        <li class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img width="40" height="40" src="" alt="...">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading"><a href="/eopic/123">medaia pxm</a></h4>
+                <p> suey 回复问题 。 2人关注...</p>
+            </div>
+        </li>
+    </ul>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+</section>
 {{ /block }}

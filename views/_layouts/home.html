@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block 'title' }}首页标题{{ /block }}</title>
+    <!-- <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"> -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    {{ block 'header' }}{{ /block }}
+</head>
+
+<body>
+    {{ include '../_template/header.html' }}
+    {{ block 'body' }}
+
+        <h1>默认模板</h1>
+
+    {{ /block }}
+    {{ include '../_template/footer.html' }}
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    {{ block 'script' }}{{ /block }}
+
+</body>
+
+</html>

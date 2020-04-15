@@ -2,6 +2,7 @@
 var express = require('express')
 var path = require('path')
 var bodyParser = require('body-parser')
+var router = require('./router')
 
 
 var app = express()
@@ -16,50 +17,21 @@ app.use('/views/', express.static(path.join(__dirname, './views')))
 app.use(bodyParser.urlencoded({extenden: false}))
 app.use(bodyParser.json())
 
-// art模板
+// art模板引擎
 app.engine('html', require('express-art-template'))
 
 
-app.get('', function(req, res){
-    res.render('index.html', {
-        data: 'hello!'
-    })
-})
+// 挂载路由容器到app服务中
+app.use(router)
 
+// app.get('', function(req, res){
+//     res.render('index.html', {
+//         data: 'hello!'
+//     })
+// })
 
+// 创建一个 8888 端口号的服务
 app.listen(8888, function(){
     console.log('express 8888 app is running...')
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
