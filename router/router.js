@@ -10,15 +10,15 @@ router.get('/', function(req, res){
 })
 
 
-
-
-
-
-
-
-
-
-
+router.get('/topics/new', function(req, res){
+    res.render('login.html')
+})
+router.get('/login', function(req, res){
+    res.render('login.html')
+})
+router.get('/register', function(req, res){
+    res.render('register.html')
+})
 
 
 
