@@ -15,18 +15,18 @@
 
     <div class="main">
     <h2>用户注册</h2>
-        <form>
+        <form id="reg_from" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">邮箱</label>
-                <input type="email" class="form-control" id="username" placeholder="Email">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">用户名</label>
-                <input type="text" class="form-control" id="username" placeholder="用户名">
+                <input type="text" class="form-control" id="username" name="username" placeholder="用户名">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">密码</label>
-                <input type="password" class="form-control" id="password" placeholder="密码">
+                <input type="password" class="form-control" id="password" name="password" placeholder="密码">
             </div>
             
             <button type="submit" class="btn btn-success longg">注册</button>
@@ -37,3 +37,26 @@
 </body>
 
 </html>
+
+<script src="/node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $('#reg_from').on('submit', function(e){
+        e.preventDefault();
+        var formData = $(this).serialize()
+        console.log( $(this))
+        $.ajax({
+            url: '/register',
+            type: 'post',
+            data: formData,
+            dataType: 'json',
+            success: function(data){
+                console.log(data)
+            }
+        })
+    })
+
+
+
+
+
+</script>
