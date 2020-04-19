@@ -39,22 +39,28 @@
                 <!-- <button type="submit" class="btn btn-default">搜索</button> -->
             </form>
             <ul class="nav navbar-nav navbar-right">
-               <a class="btn btn-default navbar-btn" href="/topics/new">发起</a>
-               <a class="btn btn-success navbar-btn" href="/login">登录</a>
-               <a class="btn btn-success navbar-btn" href="/register">注册</a>
+                <a class="btn btn-default navbar-btn" href="/topics/new">发起</a>
+                {{ if user }}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false"><img width="24" height="24" style="border-radius: 50%;" src="../public/img/cat.jpg" alt="..."><span class="caret"></span></a>
+                        aria-expanded="false"><img width="24" height="24" style="border-radius: 50%;"
+                            src="../public/img/cat.jpg" alt="..."><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-current-user">
-                            当前用户：pxm
+                            当前用户：{{ user.username }}
                         </li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#">个人主页</a></li>
                         <li><a href="/settings/profile">设置</a></li>
-                        <li><a href="#">提出</a></li>
+                        <li><a href="logout">退出</a></li>
                     </ul>
                 </li>
+                {{ else }}
+
+                <a class="btn btn-success navbar-btn" href="/login">登录</a>
+                <a class="btn btn-success navbar-btn" href="/register">注册</a>
+                {{ /if }}
+
                 <!-- <li><a href="#">发起</a></li>
                 <li><a href="#">登录</a></li>
                 <li><a href="#">注册</a></li> -->

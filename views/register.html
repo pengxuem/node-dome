@@ -51,6 +51,17 @@
             dataType: 'json',
             success: function(data){
                 console.log(data)
+                if(data.err_code == 1){
+                    alert('邮箱或昵称已存在')
+                } else if (data.err_code == 500){
+                    alert('服务器忙，请稍后重试！')
+                }else{
+                    alert('注册成功')
+                    // 一秒后页面跳转
+                    setTimeout(function(){
+                        window.location.href = '/'
+                    },1000)
+                }
             }
         })
     })

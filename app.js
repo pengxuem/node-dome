@@ -2,6 +2,7 @@
 var express = require('express')
 var path = require('path')
 var bodyParser = require('body-parser')
+var session = require('express-session')
 var router = require('./router/router')
 
 
@@ -20,9 +21,16 @@ app.use(bodyParser.json())
 // art模板引擎
 app.engine('html', require('express-art-template'))
 
+// 配置使用session
+app.use(session({
+    secret: 'pxm',
+    resave: false,
+    saveUninitialized: true
+}))
 
 // 挂载路由容器到app服务中
 app.use(router)
+
 
 // app.get('', function(req, res){
 //     res.render('index.html', {
